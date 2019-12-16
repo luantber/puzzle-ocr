@@ -6,7 +6,7 @@ from astar import *
 from collections import Counter 
 
 
-capture = cv2.VideoCapture(2)
+capture = cv2.VideoCapture(0)
 
 # define the list of boundaries
 boundaries = [
@@ -61,6 +61,8 @@ def sortCorners(corners):
 	return rect
 	
 def splitBoard(imageWraped):
+
+	print(imageWraped.shape)
 	w=imageWraped.shape[0]
 	h=imageWraped.shape[1]
 	
@@ -139,8 +141,8 @@ while(True):
 
     img_dilation = cv2.dilate(bi, kernel, iterations=15) 
     #cv2.imshow("dilatation",img_dilation )
-    img_erosion = cv2.erode(img_dilation, kernel, iterations=15) 
-    #cv2.imshow("erosion", img_erosion )
+    img_erosion = cv2.erode(img_dilation, kernel, iterations=14) 
+    cv2.imshow("erosion", img_erosion )
     
     wrapedImage = image
     
@@ -172,7 +174,7 @@ while(True):
 	    		cells_buffer = [[],[],[],[],[],[],[],[],[]]
 	    		count_tolerance = 0
 	    	"""
-	    	# print(numbers,"probably wrong")
+	    	print(numbers,"probably wrong")
 	    	if len(numbers) == len(set(numbers)):
 				
 	    		if not compare(temp_best,numbers) :

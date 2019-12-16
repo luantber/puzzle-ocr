@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import time
 from keras.models import load_model
 model = load_model("mnist.h5")
+model = load_model("train3.h5")
+
 
 def read_imgs(array_imgs):
     imgs = []
@@ -42,13 +44,17 @@ def read_imgs(array_imgs):
 def reconocer(array_imgs):
     array_imgs = read_imgs(array_imgs)
 
-    cv2.imshow( "m" , array_imgs[6] )
+    # for i in range(9):
+    #     cv2.imwrite( "dataset/" + str(i) + "_8.jpg" , array_imgs[i] )
+    
+    cv2.imshow( "2", array_imgs[2] ) 
+
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
 
     imgs = np.array(array_imgs)
     imgs = imgs.astype('float32')
-    imgs /= 255
+    imgs /= 255     
 
     
 
@@ -57,7 +63,7 @@ def reconocer(array_imgs):
 
     
 
-
+    
     return resultado # retorna array ejemplo [0 1 2 3 4 5 6 7 8]
 
 
