@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import time
 from keras.models import load_model
 model = load_model("mnist.h5")
-model = load_model("train3.h5")
+model = load_model("pesos_aug1.h5")
 
 
 def read_imgs(array_imgs):

@@ -6,7 +6,7 @@ from astar import *
 from collections import Counter 
 
 
-capture = cv2.VideoCapture(0)
+capture = cv2.VideoCapture(2)
 
 # define the list of boundaries
 boundaries = [
@@ -141,7 +141,7 @@ while(True):
 
     img_dilation = cv2.dilate(bi, kernel, iterations=15) 
     #cv2.imshow("dilatation",img_dilation )
-    img_erosion = cv2.erode(img_dilation, kernel, iterations=14) 
+    img_erosion = cv2.erode(img_dilation, kernel, iterations=15) 
     cv2.imshow("erosion", img_erosion )
     
     wrapedImage = image
@@ -174,7 +174,7 @@ while(True):
 	    		cells_buffer = [[],[],[],[],[],[],[],[],[]]
 	    		count_tolerance = 0
 	    	"""
-	    	print(numbers,"probably wrong")
+	    	print(numbers,"Reconocimiento ")
 	    	if len(numbers) == len(set(numbers)):
 				
 	    		if not compare(temp_best,numbers) :

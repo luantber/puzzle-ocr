@@ -3,7 +3,7 @@ import heapq
 from Nodo import Nodo
 
 def astar(puzzle_str):
-    return []
+    # return []
     puzzle =  puzzle_str #"104253876" #sol
     # puzzle = "123406785" #no sol
     destino = "123456780"
